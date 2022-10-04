@@ -1,0 +1,39 @@
+.hero {
+    max-width: 1600px;
+    max-height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    background: $dark-bg-color;
+    background-image: linear-gradient(to top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/main_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &__title {
+        width: 696px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-weight: 900;
+        font-size: 44px;
+        line-height: calc(60 / 44);
+        text-align: center;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $white-color;
+    }
+    &__btn {
+        @extend %btn;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 32px;
+        @include transition(background-color);
+        &:hover, &:focus {
+            background-color: $hover-btn;
+        }
+    }
+}

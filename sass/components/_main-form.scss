@@ -1,0 +1,108 @@
+.main-form {
+    &__title {
+        margin-bottom: 12px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: calc(23 / 20);
+        text-align: center;
+        letter-spacing: 0.03em;
+    }
+    &__field {
+        margin-bottom: 10px;
+        &--last-item {
+            margin-bottom: 20px;
+        }
+    }
+    &__label {
+        display: block;
+        font-size: 12px;
+        line-height: calc(14 / 12);
+        letter-spacing: 0.01em;
+        color: $light-main-color;
+        margin-bottom: 4px;
+    }
+    &__wrap {
+        position: relative;
+    }
+    &__input {
+        cursor: pointer;
+        height: 40px;
+        width: 100%;
+        padding: 11px 12px;
+        padding-left: 42px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        @include transition(outline, border);
+        &:focus {
+            outline: transparent;
+            border: 1px solid $brand-color;
+        }
+    }
+    &__icon {
+        cursor: pointer;
+        position: absolute;
+        left: 12px;
+        bottom: 50%;
+        transform: translateY(50%);
+        @include transition(fill);
+        .main-form__input:focus + & {
+            fill: $brand-color;
+        }
+    }
+    &__input {
+        &--textarea {
+            padding-left: 16px;
+            min-height: 120px;
+            resize: none;
+            &::placeholder {
+                font-size: 12px;
+                line-height: 14px;
+                letter-spacing: 0.01em;
+                color: rgba(117, 117, 117, 0.5);
+            }
+        }
+    }
+    &__btn {
+        @extend %btn;
+        padding: 10px 52px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        @include transition(background-color);
+        &:hover, &:focus {
+            background-color: $hover-btn;
+        }
+    }
+}
+
+
+.policy {
+    display: flex;
+    margin-bottom: 30px;
+    &__link {
+        text-decoration-line: underline;
+        color: var(--brand-color);
+    }
+    &__label {
+        position: relative;
+        padding-left: 37px;
+        font-size: 14px;
+        line-height: calc(24 / 14);
+        color: $light-main-color;
+    }
+    &__icon {
+        position: absolute;
+        left: 14px;
+        bottom: 50%;
+        transform: translateY(50%);
+        border: 2px solid $main-color;
+        border-radius: 2px;
+        fill: transparent;
+        @include transition(background-color, fill, border-color);
+        .policy__input:checked ~ .policy__label & {
+            fill: $white-color;
+            background-color: $brand-color;
+            border-color: $brand-color;
+        }
+    }
+}

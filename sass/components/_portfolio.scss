@@ -1,0 +1,83 @@
+.portfolio {
+    &__buttons {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    &__btn {
+        padding: 6px 22px;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        background-color: $light-bg-color;
+        border-radius: 4px;
+        border: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: calc(26 / 16);
+        text-align: center;
+        @include transition(background-color, color, box-shadow, border-radius);
+        &:hover, &:focus {
+            background-color: $brand-color;
+            color: $white-color;
+            box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+            border-radius: 4px;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+.portfolio-cards {
+    &__item {
+        @include transition(box-shadow);
+        &:hover, &:focus {
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+        }
+    }
+    &__descr {
+        position: relative;
+        overflow: hidden;
+    }
+    &__text {
+        padding: 63px 24px;
+        font-size: 18px;
+        line-height: calc(28 / 18);
+        background-color: rgba(33, 150, 243, 0.902);
+        color: $white-color;
+    }
+    &__wrapper {
+        padding: 20px 24px;
+        border: 1px solid #EEEEEE;
+        border-top: none;
+    }
+    &__title {
+        color: $main-color;
+        margin-bottom: 4px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: calc(36 / 18);
+        letter-spacing: 0.06em;
+    }
+    &__subtitle {
+        font-size: 16px;
+        line-height: calc(30 / 16);
+        color: $light-main-color;
+    }
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(101%);
+    @include transition(transform);
+    .portfolio-cards__link:hover & {
+        transform: translateY(0);
+    }
+}
