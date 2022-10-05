@@ -1,35 +1,44 @@
-.clients {
-    &__title {
-        @extend %title;
-    }
-    &__list {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-    }
-    &__item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 170px;
-        height: 92px;
-        border: 1px solid $icons-color;
-        border-radius: 4px;
-        @include transition(border);
-        &:hover, &:focus {
-            border: 1px solid $brand-color;
-        }
-    }
-    &__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        fill: $icons-color;
-        @include transition(fill);
-        &:hover, &:focus {
-            fill: $brand-color;
-        }
-    }
+.clients__title {
+  @include title();
+}
+
+.clients__list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.clients__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc((100% - 30px) / 2);
+  height: 92px;
+  border: 1px solid $icons-color;
+  border-radius: 4px;
+  @include transition(border);
+  &:hover,
+  &:focus {
+    border: 1px solid $brand-color;
+  }
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 60px) / 3);
+  }
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 150px) / 6);
+  }
+}
+
+.clients__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  fill: $icons-color;
+  @include transition(fill);
+  &:hover,
+  &:focus {
+    fill: $brand-color;
+  }
 }
